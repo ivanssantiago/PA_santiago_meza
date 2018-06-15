@@ -1,0 +1,29 @@
+#------------------------------------------------------------------------------
+VERSION = BWS.01
+#------------------------------------------------------------------------------
+!ifndef ROOT
+ROOT = $(MAKEDIR)\..
+!endif
+#------------------------------------------------------------------------------
+MAKE = $(ROOT)\bin\make.exe -$(MAKEFLAGS) -f$**
+DCC = $(ROOT)\bin\dcc32.exe $**
+BRCC = $(ROOT)\bin\brcc32.exe $**
+#------------------------------------------------------------------------------
+PROJECTS = Project_caseDemo.exe Project_goto.exe error.exe proceso.exe
+#------------------------------------------------------------------------------
+default: $(PROJECTS)
+#------------------------------------------------------------------------------
+
+Project_caseDemo.exe: Case_Demo\Project_caseDemo.dpr
+  $(DCC)
+
+Project_goto.exe: Case_Demo\Project_goto.dpr
+  $(DCC)
+
+error.exe: Case_Demo\error.dpr
+  $(DCC)
+
+proceso.exe: Case_Demo\proceso.dpr
+  $(DCC)
+
+
